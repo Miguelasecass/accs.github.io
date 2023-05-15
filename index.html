@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <meta charset="UTF-8">
+    <title>Acceso</title>
+    
+    <style>
+      /* Estilos para el botón */
+      .boton-acceso {
+        background-color: #3498db;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 10px;
+      }
+      
+      /* Estilos para el botón cuando se hace hover */
+      .boton-acceso:hover {
+        background-color: #80bfff;
+        color: white;
+      }
+      
+      /* Estilos para el botón cuando está presionado */
+      .boton-acceso:active {
+        background-color: #0b5a9a;
+        color: white;
+        transform: translateY(2px);
+      }
+      #fecha {
+        width: 12%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #d6eaf8;
+  border: 2px solid #3498db;
+  border-radius: 10px;
+      }
+
+      .ui-datepicker {
+  background-color: #fff;
+  border: 2px solid #3498db;
+  border-radius: 10px;
+}
+
+.ui-datepicker-header {
+  font-weight: bold;
+}
+
+.ui-datepicker {
+  background-color: #fff;
+  border: 2px solid #3498db;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.ui-datepicker-header {
+  font-weight: bold;
+}
+
+.ui-datepicker.ui-datepicker-opening,
+.ui-datepicker.ui-datepicker-closing {
+  opacity: 1;
+}
+
+
+
+    </style>
+     <!-- Enlaces al CSS y JS de jQuery UI -->
+     <link rel="stylesheet" href="jquery-ui-1.13.2.custom/jquery-ui.css">
+    <script src="jquery-ui-1.13.2.custom/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  
+  <body style="background-color: #f8c839;">
+    <h1 style="text-align: center;">Contraseña para acceder.</h1>
+    <div style="text-align: center;">
+      <form>
+        <label for="fecha" style="color: #2c3e50;">Aniversario:</label>
+        <input type="date" id="fecha" name="fecha">
+        <br><br>
+        <button type="submit" class="boton-acceso">Ingresar</button>
+      </form>
+    </div>
+
+    <div id="particles-js"></div>
+    
+    <script>
+      // Aniversario culeritos (en formato YYYY-MM-DD)
+      const aniversario = "2023-03-23";
+
+      // verificame la pinche fecha bby
+      function verificarFecha(evento) {
+        evento.preventDefault(); // Evitar que se envíe el formulario automáticamente
+
+        const fechaIngresada = document.getElementById("fecha").value;
+        if (fechaIngresada === aniversario) {
+          // vamonos a la otra pagina bitch
+          window.location.href = "https://miguelasecass.github.io/ymn.github.io/";
+        } else {
+          alert("No digas perras mamadas y vuelve a intentarlo.");
+        }
+      }
+
+      // Agregar un controlador de eventos para el botón de envío
+      const botonEnviar = document.querySelector("button[type=submit]");
+      botonEnviar.addEventListener("click", verificarFecha);
+
+       // Inicializar el plugin datepicker de jQuery UI
+       $(function() {
+        $(".datepicker").datepicker({
+          dateFormat: "yy-mm-dd"
+        });
+      });
+    </script>
+
+<script src="jquery/jquery-3.3.1.min.js"></script>    
+<script src="popper/popper.min.js"></script>        
+<script src="bootstrap4/js/bootstrap.min.js"></script>       
+ 
+<!--    particulas   -->   
+<script src="plugins/particles/js/particles.js"></script>   
+<script src="plugins/particles/js/lib/stats.js"></script>     
+<script src="plugins/particles/js/app.js"></script>
+  </body>
+</html>
